@@ -1,0 +1,12 @@
+[
+    {
+        "url": "https://bsky.app/profile/bsky.app/post/3lksxxugg4k27",
+        "expected_label": null,
+        "description": "A regular Bluesky post"
+    },
+    {
+        "url": "https://bsky.app/profile/labeler-test.bsky.social/post/3lktj7ewxxv2q",
+        "expected_label": null,
+        "description": "Another test post"
+    }
+]
