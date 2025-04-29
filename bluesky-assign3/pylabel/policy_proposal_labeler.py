@@ -1,17 +1,21 @@
 """Implementation of policy proposal labeler for unwanted sexual content
 
 This labeler aims to detect and label posts containing potentially unwanted sexual 
-communication, focusing specifically on unsolicited sexually explicit text. It 
-implements a moderation approach as outlined in Assignment 2, applying natural
-language processing techniques to identify inappropriate content patterns.
+communication, focusing on both unsolicited sexually explicit text and images. It 
+implements a moderation approach as outlined in Assignment 2, applying detection 
+techniques to identify inappropriate content patterns.
 
 The labeler attaches a "sexual-content" label to posts that match detection criteria.
 """
 
-from typing import List, Optional, Dict, Set
+from typing import List, Optional, Dict, Set, Tuple
 import re
 import os
 import json
+import requests
+from perception import hashers
+from PIL import Image
+from io import BytesIO
 from atproto import Client
 
 from .label import post_from_url
@@ -22,7 +26,7 @@ SEXUAL_CONTENT_LABEL = "sexual-content"
 class PolicyProposalLabeler:
     """
     Labeler implementation for unwanted sexual content
-    This focuses on detecting sexually explicit text communication that may be unwanted
+    This focuses on detecting sexually explicit text and image content that may be unwanted
     """
 
     def __init__(self, client: Client, input_dir: str):
@@ -35,9 +39,13 @@ class PolicyProposalLabeler:
         """
         self.client = client
         self.input_dir = input_dir
+        self.image_hash_threshold = 10  # Threshold for perceptual hash matching (lower = stricter)
         
         # Load dictionaries of sexual terms and phrases
         self._load_dictionaries()
+        
+        # Initialize image hash database
+        self._init_image_database()
         
         # Define patterns that indicate solicitation or unwanted communication
         self.solicitation_patterns = [
@@ -71,6 +79,24 @@ class PolicyProposalLabeler:
                     self.primary_terms.update(loaded_terms)
         except Exception as e:
             print(f"Warning: Could not load sexual terms file: {e}")
+    
+    def _init_image_database(self):
+        """Initialize the image database for matching potentially inappropriate images"""
+        self.image_hasher = hashers.PHash()
+        self.known_nsfw_hashes = []
+        
+        # Ideally, load hashes from a database file
+        # For this implementation, we'll use a sample approach
+        try:
+            # Try to load image hashes from a sample file if it exists
+            sample_hashes_file = os.path.join(self.input_dir, "nsfw_image_hashes.json")
+            if os.path.exists(sample_hashes_file):
+                with open(sample_hashes_file, 'r') as f:
+                    self.known_nsfw_hashes = json.load(f)
+            else:
+                print("No image hash database found. Will rely on other detection methods.")
+        except Exception as e:
+            print(f"Warning: Could not load image hash database: {e}")
     
     def _contains_sexual_terms(self, text: str) -> bool:
         """
@@ -130,7 +156,7 @@ class PolicyProposalLabeler:
     
     def _analyze_post_content(self, text: str) -> bool:
         """
-        Analyze post content to determine if it should be labeled
+        Analyze post text content to determine if it should be labeled
         
         Args:
             text: Text content to analyze
@@ -200,6 +226,94 @@ class PolicyProposalLabeler:
                 
         return min(score, 5)  # Cap at 5
     
+    def _extract_image_urls(self, post):
+        """
+        Extract image URLs from a post
+        
+        Args:
+            post: Bluesky post object
+            
+        Returns:
+            List of image URLs found in the post
+        """
+        image_urls = []
+        
+        # Check if post has embedded images
+        if hasattr(post, 'embed') and post.embed:
+            # Handle different embed types
+            if hasattr(post.embed, 'images'):
+                for img in post.embed.images:
+                    if hasattr(img, 'fullsize'):
+                        image_urls.append(img.fullsize)
+            elif hasattr(post.embed, 'media') and hasattr(post.embed.media, 'images'):
+                for img in post.embed.media.images:
+                    if hasattr(img, 'fullsize'):
+                        image_urls.append(img.fullsize)
+                        
+        return image_urls
+    
+    def _analyze_image(self, image_url: str) -> bool:
+        """
+        Analyze an image to determine if it contains inappropriate content
+        
+        Args:
+            image_url: URL of the image to analyze
+            
+        Returns:
+            True if the image is flagged as inappropriate, False otherwise
+        """
+        try:
+            # Download the image
+            response = requests.get(image_url, timeout=10)
+            if response.status_code != 200:
+                print(f"Failed to download image: {image_url}")
+                return False
+                
+            # Process the image
+            img = Image.open(BytesIO(response.content))
+            
+            # Compute perceptual hash
+            img_hash = self.image_hasher.compute(img)
+            
+            # Compare with known NSFW image hashes
+            for known_hash in self.known_nsfw_hashes:
+                # Check if the hash is close enough to a known NSFW hash
+                if self.image_hasher.compare(img_hash, known_hash) < self.image_hash_threshold:
+                    return True
+            
+            # Additional image analysis could be added here
+            # For example, skin tone detection, pose detection, etc.
+            
+            return False
+            
+        except Exception as e:
+            print(f"Error analyzing image {image_url}: {e}")
+            return False
+    
+    def _analyze_post_images(self, post) -> bool:
+        """
+        Analyze all images in a post to determine if any contain inappropriate content
+        
+        Args:
+            post: Bluesky post object
+            
+        Returns:
+            True if any image is flagged as inappropriate, False otherwise
+        """
+        # Extract image URLs from the post
+        image_urls = self._extract_image_urls(post)
+        
+        # If no images, no need to label based on images
+        if not image_urls:
+            return False
+            
+        # Analyze each image
+        for image_url in image_urls:
+            if self._analyze_image(image_url):
+                return True
+                
+        return False
+    
     def moderate_post(self, url: str) -> Optional[str]:
         """
         Apply moderation to the post specified by the given URL
@@ -214,14 +328,18 @@ class PolicyProposalLabeler:
             # Fetch the post content
             post = post_from_url(self.client, url)
             
-            if not post or not hasattr(post, 'value') or not hasattr(post.value, 'text'):
-                print(f"Warning: Could not retrieve text from post {url}")
+            if not post or not hasattr(post, 'value'):
+                print(f"Warning: Could not retrieve post {url}")
                 return None
                 
-            post_text = post.value.text
+            # Check text content if available
+            if hasattr(post.value, 'text'):
+                post_text = post.value.text
+                if self._analyze_post_content(post_text):
+                    return SEXUAL_CONTENT_LABEL
             
-            # Analyze the post content to determine if it should be labeled
-            if self._analyze_post_content(post_text):
+            # Check image content if available
+            if self._analyze_post_images(post.value):
                 return SEXUAL_CONTENT_LABEL
                 
             return None
