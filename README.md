@@ -34,20 +34,29 @@ The labeler uses a combination of techniques to identify unwanted sexual content
    ```
 
 2. Required dependencies:
+if your device is macOS, use python 3.9
    ```
-   pip install atproto dotenv requests perception pillow
+   pip install atproto dotenv requests perception pillow pandas opencv-python
    ```
 
 3. Place configuration files in your labeler inputs directory:
    - `sexual_terms.json`: List of terms related to sexual content
    - `nsfw_image_hashes.json`: (Optional) Database of perceptual hashes of known inappropriate images
 
-4. Run the labeler with test data:
+4. Run automated_labeler.py(Part1 - Milestone 2,3,4):
+   ```
+   python test_labeler.py labeler-inputs test-data/input-posts-t-and-s.csv && \
+   python test_labeler.py labeler-inputs test-data/input-posts-cite.csv && \
+   python test_labeler.py labeler-inputs test-data/input-posts-dogs.csv
+
+   ```
+
+5. Run policy_proposal_labeler.py with test data(Part2):
    ```
    python test_policy_labeler.py labeler-inputs test_posts.json
    ```
 
-5. To emit actual labels to Bluesky (use with caution):
+6. Run policy_proposal_labeler.py, To emit actual labels to Bluesky (use with caution):
    ```
    python test_policy_labeler.py labeler-inputs test_posts.json --emit_labels
    ```
