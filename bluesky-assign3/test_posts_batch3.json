@@ -1,0 +1,102 @@
+[
+    {
+        "url": "https://bsky.app/profile/inblck.com/post/3lnqebuhgvk2r",
+        "expected_label": "sexual-content",
+        "description": "Bach post with artnude and nudemodel hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnsyjf6awc2n",
+        "expected_label": "sexual-content",
+        "description": "Greyson Carlyle casual hangout post with Nude hashtag"
+    },
+    {
+        "url": "https://bsky.app/profile/lauratuscany.bsky.social/post/3lnxbbqymvk2y",
+        "expected_label": "sexual-content",
+        "description": "Laura post with nudephotography and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/inblck.com/post/3lnv3f2xq7k2h",
+        "expected_label": "sexual-content",
+        "description": "Bach post with artnude and fineart hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/yasminsarte.bsky.social/post/3lno544otpc27",
+        "expected_label": "sexual-content",
+        "description": "Yasmin Friday night post with nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnua35d2wc2m",
+        "expected_label": "sexual-content",
+        "description": "Blackfootphotos post with Katya and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnqmwdml3k2l",
+        "expected_label": "sexual-content",
+        "description": "That TN Nudist Saturday post with nudist hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/evolvingbeauty.bsky.social/post/3lntnugwojs2l",
+        "expected_label": "sexual-content",
+        "description": "Eric Boutilier-Brown daily post with nsfw and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnufppjbzc2m",
+        "expected_label": "sexual-content",
+        "description": "Blackfootphotos post with Juliane and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/gdbphoto.bsky.social/post/3lnoixafa2k2n",
+        "expected_label": "sexual-content",
+        "description": "George Butch post with Stacey and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/dunkeltraum.bsky.social/post/3lnxwbvs5os27",
+        "expected_label": "sexual-content",
+        "description": "dunkeltraum post with Teenspirit and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/inblck.com/post/3lnni33dnmc2e",
+        "expected_label": "sexual-content",
+        "description": "Bach post with artnude and fineart hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/slimnudist.bsky.social/post/3lnu5zo5xks2n",
+        "expected_label": "sexual-content",
+        "description": "Slim Nudist post about change of venue and staying bare"
+    },
+    {
+        "url": "https://bsky.app/profile/tegantrex.bsky.social/post/3lnspxan4qs2u",
+        "expected_label": null,
+        "description": "fateeg'd 2.0 post saying 'I'm pretty' without explicit sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwtpjvyh22k",
+        "expected_label": "sexual-content",
+        "description": "Blackfootphotos post with Nella and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/aaronrayburnphoto.bsky.social/post/3lnqngj5dgc2o",
+        "expected_label": "sexual-content",
+        "description": "Aaron Rayburn Photography post with fineartnude hashtag"
+    },
+    {
+        "url": "https://bsky.app/profile/stargliderphotos.bsky.social/post/3lnogaqnca22o",
+        "expected_label": "sexual-content",
+        "description": "Starglider Photography post with model and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/cristianotuscany.bsky.social/post/3lnsc54ldes2u",
+        "expected_label": "sexual-content",
+        "description": "Cristiano post with nudephoto and nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnsv6dr3tc2n",
+        "expected_label": "sexual-content",
+        "description": "That TN Nudist repost with nudist hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/nudistjeff.bsky.social/post/3lno7dwpmhk2s",
+        "expected_label": "sexual-content",
+        "description": "Nudist Jeff post about drawing group pose"
+    }
+]

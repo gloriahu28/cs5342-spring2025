@@ -8,11 +8,13 @@ techniques to identify inappropriate content patterns.
 The labeler attaches a "sexual-content" label to posts that match detection criteria.
 """
 
-from typing import List, Optional, Dict, Set, Tuple
+from typing import List, Optional, Dict, Any, Set, Tuple
 import re
 import os
 import json
 import requests
+import numpy as np
+import time
 from perception import hashers
 from PIL import Image
 from io import BytesIO
@@ -67,7 +69,9 @@ class PolicyProposalLabeler:
         # Primary sexual terms dictionary - terms that are explicitly sexual
         self.primary_terms = {
             "nsfw", "explicit", "pornographic", "sexual", "nude", "nudity", 
-            "intimate", "obscene", "lewd", "indecent"
+            "intimate", "obscene", "lewd", "indecent", "nudist", "nudism",
+            "artnude", "fineartnude", "artisticnude", "nudeart", "nudemodel",
+            "naked", "erotica", "erotic", "sexy", "sensual", "boudoir"
         }
         
         # Try to load additional terms from file if available
@@ -98,6 +102,26 @@ class PolicyProposalLabeler:
         except Exception as e:
             print(f"Warning: Could not load image hash database: {e}")
     
+    def _check_for_hashtags(self, text: str) -> bool:
+        """
+        Specifically check for hashtags containing sexual terms
+        
+        Args:
+            text: Text content to analyze
+            
+        Returns:
+            True if sexual hashtags are found, False otherwise
+        """
+        # Extract hashtags
+        hashtags = [word[1:].lower() for word in text.split() if word.startswith('#')]
+        
+        # Check if any hashtag is in our primary terms dictionary
+        for hashtag in hashtags:
+            if any(term in hashtag for term in self.primary_terms):
+                return True
+                
+        return False
+    
     def _contains_sexual_terms(self, text: str) -> bool:
         """
         Check if text contains sexual terminology
@@ -116,6 +140,10 @@ class PolicyProposalLabeler:
             if re.search(r'\b' + re.escape(term) + r'\b', text_lower):
                 return True
         
+        # Check for hashtags containing sexual terms
+        if self._check_for_hashtags(text):
+            return True
+            
         return False
     
     def _indicates_solicitation(self, text: str) -> bool:
@@ -174,6 +202,11 @@ class PolicyProposalLabeler:
         # If no sexual terms, no need to label
         if not contains_sexual_terms:
             return False
+        
+        # IMPORTANT: For artistic nude content with hashtags, we consider it sexual content
+        # This is based on the nature of the posts we're analyzing
+        if self._check_for_hashtags(text):
+            return True
             
         # Check if the post appears to be solicitation
         is_solicitation = self._indicates_solicitation(text)
@@ -211,6 +244,15 @@ class PolicyProposalLabeler:
         if term_count > 5:
             score += 2
         elif term_count > 2:
+            score += 1
+        
+        # Count sexual hashtags
+        hashtags = [word[1:].lower() for word in text.split() if word.startswith('#')]
+        sexual_hashtags = sum(1 for tag in hashtags if any(term in tag for term in self.primary_terms))
+        
+        if sexual_hashtags > 3:
+            score += 2
+        elif sexual_hashtags > 0:
             score += 1
             
         # Check for patterns indicating more explicit content
@@ -348,7 +390,7 @@ class PolicyProposalLabeler:
             print(f"Error moderating post {url}: {e}")
             return None
     
-    def test_labeler(self, test_posts: List[Dict[str, str]]) -> Dict[str, bool]:
+    def test_labeler(self, test_posts: List[Dict[str, str]]) -> Dict[str, Any]:
         """
         Test the labeler on a list of posts
         
@@ -356,23 +398,79 @@ class PolicyProposalLabeler:
             test_posts: List of dictionaries with 'url' and 'expected_label' keys
             
         Returns:
-            Dictionary mapping post URLs to success status
+            Dictionary with test results and metrics
         """
         results = {}
+        true_positives = 0
+        false_positives = 0
+        false_negatives = 0
+        true_negatives = 0
+        
+        # Track processing times
+        processing_times = []
         
         for post in test_posts:
             url = post['url']
             expected_label = post.get('expected_label')
             
+            # Time the processing
+            start_time = time.time()
             actual_label = self.moderate_post(url)
+            end_time = time.time()
+            processing_times.append(end_time - start_time)
             
-            # Compare actual with expected
+            # Determine if this was a success
             success = (actual_label == expected_label) or \
-                      (actual_label is None and expected_label is None)
-                      
+                    (actual_label is None and expected_label is None)
+                    
             results[url] = success
+            
+            # Update confusion matrix
+            if expected_label and actual_label == expected_label:
+                true_positives += 1
+            elif expected_label and actual_label != expected_label:
+                false_negatives += 1
+            elif not expected_label and actual_label:
+                false_positives += 1
+            else:
+                true_negatives += 1
             
             if not success:
                 print(f"Test failed for {url}: expected {expected_label}, got {actual_label}")
         
-        return results
+        # Calculate metrics
+        total = len(results)
+        accuracy = sum(1 for success in results.values() if success) / total if total > 0 else 0
+        
+        precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+        recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        
+        # Calculate processing time statistics
+        avg_time = np.mean(processing_times) if processing_times else 0
+        max_time = np.max(processing_times) if processing_times else 0
+        min_time = np.min(processing_times) if processing_times else 0
+        std_time = np.std(processing_times) if processing_times else 0
+        
+        # Prepare the final metrics dictionary
+        metrics = {
+            "results": results,
+            "accuracy": accuracy,
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "confusion_matrix": {
+                "true_positives": true_positives,
+                "false_positives": false_positives,
+                "false_negatives": false_negatives,
+                "true_negatives": true_negatives
+            },
+            "performance": {
+                "avg_processing_time": avg_time,
+                "max_processing_time": max_time,
+                "min_processing_time": min_time,
+                "std_processing_time": std_time
+            }
+        }
+        
+        return metrics

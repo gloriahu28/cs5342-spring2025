@@ -1,0 +1,40 @@
+{
+  "results": {
+    "https://bsky.app/profile/babes2025.bsky.social/post/3lnsrbkn6rd2z": false,
+    "https://bsky.app/profile/ratstar.bsky.social/post/3lnuaz5dphs2p": false,
+    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lntlrnb4yk2c": true,
+    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lno4akjgv22h": true,
+    "https://bsky.app/profile/figuresinlight.bsky.social/post/3lnx5xntjds2x": true,
+    "https://bsky.app/profile/nudistpsyduck.bsky.social/post/3lnwjopbbl224": true,
+    "https://bsky.app/profile/inblck.com/post/3lnscsfzo4c2l": true,
+    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnvetpddd22w": true,
+    "https://bsky.app/profile/inblck.com/post/3lnxbksvdfc2h": true,
+    "https://bsky.app/profile/inblck.com/post/3lnxjbl5d5s2u": true,
+    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnsz5bwc4s27": true,
+    "https://bsky.app/profile/synthesisart.bsky.social/post/3lnnytzsnbc2b": true,
+    "https://bsky.app/profile/the-scandinavian.dk/post/3lnq4iif3722p": true,
+    "https://bsky.app/profile/inblck.com/post/3lnsxpiein225": true,
+    "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnvsnoid4k2j": true,
+    "https://bsky.app/profile/andersloost.bsky.social/post/3lnunymoeek2r": true,
+    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnrn6jzfx22b": true,
+    "https://bsky.app/profile/gb62da.bsky.social/post/3lnrlplgdqk22": true,
+    "https://bsky.app/profile/inblck.com/post/3lntkmmnly22w": true,
+    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lny557ahvk25": true
+  },
+  "accuracy": 0.9,
+  "precision": 1.0,
+  "recall": 0.9,
+  "f1": 0.9473684210526316,
+  "confusion_matrix": {
+    "true_positives": 18,
+    "false_positives": 0,
+    "false_negatives": 2,
+    "true_negatives": 0
+  },
+  "performance": {
+    "avg_processing_time": 0.27381118535995486,
+    "max_processing_time": 0.29282188415527344,
+    "min_processing_time": 0.2633678913116455,
+    "std_processing_time": 0.0072977616793520675
+  }
+}

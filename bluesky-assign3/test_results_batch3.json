@@ -1,0 +1,40 @@
+{
+  "results": {
+    "https://bsky.app/profile/inblck.com/post/3lnqebuhgvk2r": true,
+    "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnsyjf6awc2n": true,
+    "https://bsky.app/profile/lauratuscany.bsky.social/post/3lnxbbqymvk2y": true,
+    "https://bsky.app/profile/inblck.com/post/3lnv3f2xq7k2h": true,
+    "https://bsky.app/profile/yasminsarte.bsky.social/post/3lno544otpc27": true,
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnua35d2wc2m": true,
+    "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnqmwdml3k2l": true,
+    "https://bsky.app/profile/evolvingbeauty.bsky.social/post/3lntnugwojs2l": true,
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnufppjbzc2m": true,
+    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lnoixafa2k2n": true,
+    "https://bsky.app/profile/dunkeltraum.bsky.social/post/3lnxwbvs5os27": true,
+    "https://bsky.app/profile/inblck.com/post/3lnni33dnmc2e": true,
+    "https://bsky.app/profile/slimnudist.bsky.social/post/3lnu5zo5xks2n": false,
+    "https://bsky.app/profile/tegantrex.bsky.social/post/3lnspxan4qs2u": true,
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwtpjvyh22k": true,
+    "https://bsky.app/profile/aaronrayburnphoto.bsky.social/post/3lnqngj5dgc2o": true,
+    "https://bsky.app/profile/stargliderphotos.bsky.social/post/3lnogaqnca22o": true,
+    "https://bsky.app/profile/cristianotuscany.bsky.social/post/3lnsc54ldes2u": true,
+    "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnsv6dr3tc2n": true,
+    "https://bsky.app/profile/nudistjeff.bsky.social/post/3lno7dwpmhk2s": false
+  },
+  "accuracy": 0.9,
+  "precision": 1.0,
+  "recall": 0.8947368421052632,
+  "f1": 0.9444444444444444,
+  "confusion_matrix": {
+    "true_positives": 17,
+    "false_positives": 0,
+    "false_negatives": 2,
+    "true_negatives": 1
+  },
+  "performance": {
+    "avg_processing_time": 0.2651153326034546,
+    "max_processing_time": 0.2778952121734619,
+    "min_processing_time": 0.20253610610961914,
+    "std_processing_time": 0.018545422711087344
+  }
+}

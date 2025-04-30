@@ -1,12 +1,53 @@
+
 [
     {
-        "url": "https://bsky.app/profile/bsky.app/post/3lksxxugg4k27",
+        "url": "https://bsky.app/profile/blakewilder.bsky.social/post/3lny2jx37fs2p",
         "expected_label": null,
-        "description": "A regular Bluesky post"
+        "description": "A regular Bluesky post with no sexual content"
     },
     {
-        "url": "https://bsky.app/profile/labeler-test.bsky.social/post/3lktj7ewxxv2q",
+        "url": "https://bsky.app/profile/matryt.bsky.social/post/3lr5xvzgpma2t",
         "expected_label": null,
-        "description": "Another test post"
+        "description": "Educational post discussing digital safety"
+    },
+    {
+        "url": "https://bsky.app/profile/techpolicy.bsky.social/post/3lrc7xvffdj24",
+        "expected_label": null,
+        "description": "Post discussing content moderation policy"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuzvc42hl24",
+        "expected_label": "sexual-content",
+        "description": "Test post with sexual terms and solicitation patterns"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuxlwhysr23",
+        "expected_label": "sexual-content", 
+        "description": "Post containing multiple sexual terms"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuy4j5yir2t",
+        "expected_label": null,
+        "description": "Post with sexual terms in educational context"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuyjw5cer24",
+        "expected_label": null,
+        "description": "Post with ambiguous terms but in legitimate context"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuyyn2hhq2n",
+        "expected_label": "sexual-content",
+        "description": "Post with subtle solicitation patterns"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuz4dqc3r2e",
+        "expected_label": null,
+        "description": "Short post that shouldn't trigger any flags"
+    },
+    {
+        "url": "https://bsky.app/profile/cs5342-test.bsky.social/post/3lsuzanspxs2j",
+        "expected_label": "sexual-content",
+        "description": "Post with multiple emojis indicating sexual content"
     }
 ]
