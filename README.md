@@ -43,14 +43,14 @@ if your device is macOS, use python 3.9
    - `sexual_terms.json`: List of terms related to sexual content
    - `nsfw_image_hashes.json`: (Optional) Database of perceptual hashes of known inappropriate images
 
-4. Run automated_labeler.py(Part1 - Milestone 2,3,4):
+4. Run automated_labeler.py (Part1 - Milestone 2,3,4):
    ```
    python test_labeler.py labeler-inputs test-data/input-posts-t-and-s.csv && \
    python test_labeler.py labeler-inputs test-data/input-posts-cite.csv && \
    python test_labeler.py labeler-inputs test-data/input-posts-dogs.csv
    ```
 
-5. Run policy_proposal_labeler.py with test data(Part2):
+5. Run policy_proposal_labeler.py with test data (Part2):
    ```
    python test_policy_labeler.py labeler-inputs test_posts.json
    ```
