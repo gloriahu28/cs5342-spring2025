@@ -48,7 +48,6 @@ if your device is macOS, use python 3.9
    python test_labeler.py labeler-inputs test-data/input-posts-t-and-s.csv && \
    python test_labeler.py labeler-inputs test-data/input-posts-cite.csv && \
    python test_labeler.py labeler-inputs test-data/input-posts-dogs.csv
-
    ```
 
 5. Run policy_proposal_labeler.py with test data(Part2):
