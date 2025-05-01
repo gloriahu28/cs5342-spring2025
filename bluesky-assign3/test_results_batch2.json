@@ -1,5 +1,10 @@
 {
   "results": {
+    "https://bsky.app/profile/andersloost.bsky.social/post/3lnunymoeek2r": true,
+    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnrn6jzfx22b": true,
+    "https://bsky.app/profile/gb62da.bsky.social/post/3lnrlplgdqk22": true,
+    "https://bsky.app/profile/inblck.com/post/3lntkmmnly22w": true,
+    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lny557ahvk25": true,
     "https://bsky.app/profile/bbhtaylor.bsky.social/post/3lnqagwqors2h": true,
     "https://bsky.app/profile/jimhoffmaier.bsky.social/post/3lnpsrvaz6k2v": true,
     "https://bsky.app/profile/chrischii-foto.bsky.social/post/3lnwg5e3uuk24": true,
@@ -10,31 +15,31 @@
     "https://bsky.app/profile/pclxsbr.bsky.social/post/3lnvebdgjkk2a": false,
     "https://bsky.app/profile/chrischii-foto.bsky.social/post/3lntdcan3es2u": true,
     "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwmgby6222g": true,
-    "https://bsky.app/profile/inblck.com/post/3lnutdz45yc2u": true,
-    "https://bsky.app/profile/inblck.com/post/3lnsjzezg3k2b": true,
-    "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnqcglqimk2u": true,
-    "https://bsky.app/profile/andersloost.bsky.social/post/3lnsa52qvvc2f": true,
-    "https://bsky.app/profile/mglichtmaler.bsky.social/post/3lnxx4xvn7226": true,
-    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwhekltcs2g": true,
-    "https://bsky.app/profile/inblck.com/post/3lnvcdv5d222o": true,
-    "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnvazizzms2f": true,
-    "https://bsky.app/profile/louisiananudistcpl.bsky.social/post/3lnt6l2lvxk2g": true,
-    "https://bsky.app/profile/evolvingbeauty.bsky.social/post/3lnvhoyvtmc2v": true
+    "https://bsky.app/profile/anntelnaes.bsky.social/post/3lo2sirozks2d": true,
+    "https://bsky.app/profile/elizabethjacobs.bsky.social/post/3lo2upefes22r": true,
+    "https://bsky.app/profile/number10cat.bsky.social/post/3lo2w4q44kc2f": true,
+    "https://bsky.app/profile/jimmusilpainter.bsky.social/post/3lnzuuwqtt22q": true,
+    "https://bsky.app/profile/dailybunnies.bsky.social/post/3lo2qirg7xs2b": true,
+    "https://bsky.app/profile/katewagner.bsky.social/post/3lo2zofyks22u": true,
+    "https://bsky.app/profile/bencollins.bsky.social/post/3lo2ilthnz22z": true,
+    "https://bsky.app/profile/mikez.bsky.social/post/3lo2yqc4f4k2k": true,
+    "https://bsky.app/profile/weratedogs.com/post/3lnyhtihpg22g": true,
+    "https://bsky.app/profile/krassenstein.bsky.social/post/3lo2wva5vls2i": true
   },
-  "accuracy": 0.95,
+  "accuracy": 0.96,
   "precision": 1.0,
-  "recall": 0.95,
-  "f1": 0.9743589743589743,
+  "recall": 0.9333333333333333,
+  "f1": 0.9655172413793104,
   "confusion_matrix": {
-    "true_positives": 19,
+    "true_positives": 14,
     "false_positives": 0,
     "false_negatives": 1,
-    "true_negatives": 0
+    "true_negatives": 10
   },
   "performance": {
-    "avg_processing_time": 0.26849199533462526,
-    "max_processing_time": 0.2877988815307617,
-    "min_processing_time": 0.20237016677856445,
-    "std_processing_time": 0.01599278771942176
+    "avg_processing_time": 0.2784174156188965,
+    "max_processing_time": 0.424731969833374,
+    "min_processing_time": 0.264636754989624,
+    "std_processing_time": 0.03015396822008642
   }
 }

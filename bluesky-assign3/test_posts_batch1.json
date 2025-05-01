@@ -75,28 +75,53 @@
         "description": "Greyson Carlyle post about Instagram with nude hashtags"
     },
     {
-        "url": "https://bsky.app/profile/andersloost.bsky.social/post/3lnunymoeek2r",
-        "expected_label": "sexual-content",
-        "description": "Anders Loost post with FineArtNude hashtag"
+        "url": "https://bsky.app/profile/womensartbluesky.bsky.social/post/3lnwjhqxix224",
+        "expected_label": null,
+        "description": "Women's Art regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnrn6jzfx22b",
-        "expected_label": "sexual-content",
-        "description": "Ayla-Jay.com Sunday morning post with nude hashtags"
+        "url": "https://bsky.app/profile/weratedogs.com/post/3lo2t7b5bi22l",
+        "expected_label": null,
+        "description": "We Rate Dogs regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/gb62da.bsky.social/post/3lnrlplgdqk22",
-        "expected_label": "sexual-content",
-        "description": "gb62da post with Happy Niky and nude/nsfw hashtags"
+        "url": "https://bsky.app/profile/billybinion.bsky.social/post/3lo2szy2c4c26",
+        "expected_label": null,
+        "description": "Billy Binion regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/inblck.com/post/3lntkmmnly22w",
-        "expected_label": "sexual-content",
-        "description": "Bach post with artnude and fineart hashtags"
+        "url": "https://bsky.app/profile/markhamillofficial.bsky.social/post/3lnya54rvrc2t",
+        "expected_label": null,
+        "description": "Mark Hamill regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/gdbphoto.bsky.social/post/3lny557ahvk25",
-        "expected_label": "sexual-content",
-        "description": "George Butch post with piano duet and nude hashtags"
+        "url": "https://bsky.app/profile/cedricmas.bsky.social/post/3lo2oza3tzs2v",
+        "expected_label": null,
+        "description": "Cedric Mas regular post without sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/nancylevinestearns.bsky.social/post/3lnxspvzhdc2u",
+        "expected_label": null,
+        "description": "Nancy Levine Stearns regular post without sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/thedevil.bsky.social/post/3lo2i6kwamc25",
+        "expected_label": null,
+        "description": "The Devil regular post without sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/irishrainforest.bsky.social/post/3lo2khmefms2m",
+        "expected_label": null,
+        "description": "Irish Rainforest regular post without sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/theathletic.bsky.social/post/3lnyg67zjan2g",
+        "expected_label": null,
+        "description": "The Athletic regular post without sexual content"
+    },
+    {
+        "url": "https://bsky.app/profile/billmontei.bsky.social/post/3lo2og7n4kk2p",
+        "expected_label": null,
+        "description": "Bill Montei regular post without sexual content"
     }
 ]

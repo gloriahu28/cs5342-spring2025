@@ -1,0 +1,45 @@
+{
+  "results": {
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnua35d2wc2m": true,
+    "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnqmwdml3k2l": true,
+    "https://bsky.app/profile/evolvingbeauty.bsky.social/post/3lntnugwojs2l": true,
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnufppjbzc2m": true,
+    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lnoixafa2k2n": true,
+    "https://bsky.app/profile/dunkeltraum.bsky.social/post/3lnxwbvs5os27": true,
+    "https://bsky.app/profile/inblck.com/post/3lnni33dnmc2e": true,
+    "https://bsky.app/profile/slimnudist.bsky.social/post/3lnu5zo5xks2n": false,
+    "https://bsky.app/profile/tegantrex.bsky.social/post/3lnspxan4qs2u": false,
+    "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwtpjvyh22k": true,
+    "https://bsky.app/profile/aaronrayburnphoto.bsky.social/post/3lnqngj5dgc2o": true,
+    "https://bsky.app/profile/stargliderphotos.bsky.social/post/3lnogaqnca22o": true,
+    "https://bsky.app/profile/cristianotuscany.bsky.social/post/3lnsc54ldes2u": true,
+    "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnsv6dr3tc2n": true,
+    "https://bsky.app/profile/nudistjeff.bsky.social/post/3lno7dwpmhk2s": false,
+    "https://bsky.app/profile/lfgryph.com/post/3lo3265vzgs2y": true,
+    "https://bsky.app/profile/nytimes.com/post/3lny2ywit2c2i": true,
+    "https://bsky.app/profile/slungusposting.bsky.social/post/3lo32sdrqms27": true,
+    "https://bsky.app/profile/sidebangsmusic.com/post/3lo2rmgkt7s2x": true,
+    "https://bsky.app/profile/c0nc0rdance.bsky.social/post/3lnztbbwwbs2x": true,
+    "https://bsky.app/profile/hookieduke.bsky.social/post/3lo2tknajd22p": true,
+    "https://bsky.app/profile/mstreefrog.bsky.social/post/3lo2xvh6ef22l": true,
+    "https://bsky.app/profile/toadally.bsky.social/post/3lo334cvb6k2q": true,
+    "https://bsky.app/profile/dreamcatcher01.bsky.social/post/3lo32p5ntf22p": true,
+    "https://bsky.app/profile/mollyjongfast.bsky.social/post/3lnzn3nsvyc25": true
+  },
+  "accuracy": 0.88,
+  "precision": 1.0,
+  "recall": 0.8,
+  "f1": 0.888888888888889,
+  "confusion_matrix": {
+    "true_positives": 12,
+    "false_positives": 0,
+    "false_negatives": 3,
+    "true_negatives": 10
+  },
+  "performance": {
+    "avg_processing_time": 0.2651650047302246,
+    "max_processing_time": 0.28035402297973633,
+    "min_processing_time": 0.17064499855041504,
+    "std_processing_time": 0.022622140397939045
+  }
+}

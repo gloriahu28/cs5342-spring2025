@@ -15,26 +15,31 @@
     "https://bsky.app/profile/the-scandinavian.dk/post/3lnq4iif3722p": true,
     "https://bsky.app/profile/inblck.com/post/3lnsxpiein225": true,
     "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnvsnoid4k2j": true,
-    "https://bsky.app/profile/andersloost.bsky.social/post/3lnunymoeek2r": true,
-    "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnrn6jzfx22b": true,
-    "https://bsky.app/profile/gb62da.bsky.social/post/3lnrlplgdqk22": true,
-    "https://bsky.app/profile/inblck.com/post/3lntkmmnly22w": true,
-    "https://bsky.app/profile/gdbphoto.bsky.social/post/3lny557ahvk25": true
+    "https://bsky.app/profile/womensartbluesky.bsky.social/post/3lnwjhqxix224": true,
+    "https://bsky.app/profile/weratedogs.com/post/3lo2t7b5bi22l": true,
+    "https://bsky.app/profile/billybinion.bsky.social/post/3lo2szy2c4c26": true,
+    "https://bsky.app/profile/markhamillofficial.bsky.social/post/3lnya54rvrc2t": true,
+    "https://bsky.app/profile/cedricmas.bsky.social/post/3lo2oza3tzs2v": true,
+    "https://bsky.app/profile/nancylevinestearns.bsky.social/post/3lnxspvzhdc2u": true,
+    "https://bsky.app/profile/thedevil.bsky.social/post/3lo2i6kwamc25": true,
+    "https://bsky.app/profile/irishrainforest.bsky.social/post/3lo2khmefms2m": true,
+    "https://bsky.app/profile/theathletic.bsky.social/post/3lnyg67zjan2g": true,
+    "https://bsky.app/profile/billmontei.bsky.social/post/3lo2og7n4kk2p": true
   },
-  "accuracy": 0.9,
+  "accuracy": 0.92,
   "precision": 1.0,
-  "recall": 0.9,
-  "f1": 0.9473684210526316,
+  "recall": 0.8666666666666667,
+  "f1": 0.9285714285714286,
   "confusion_matrix": {
-    "true_positives": 18,
+    "true_positives": 13,
     "false_positives": 0,
     "false_negatives": 2,
-    "true_negatives": 0
+    "true_negatives": 10
   },
   "performance": {
-    "avg_processing_time": 0.27381118535995486,
-    "max_processing_time": 0.29282188415527344,
-    "min_processing_time": 0.2633678913116455,
-    "std_processing_time": 0.0072977616793520675
+    "avg_processing_time": 0.27345322608947753,
+    "max_processing_time": 0.2907381057739258,
+    "min_processing_time": 0.26488494873046875,
+    "std_processing_time": 0.0056621792455508945
   }
 }

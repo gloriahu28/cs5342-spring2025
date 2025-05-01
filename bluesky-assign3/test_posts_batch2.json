@@ -1,5 +1,30 @@
 [
     {
+        "url": "https://bsky.app/profile/andersloost.bsky.social/post/3lnunymoeek2r",
+        "expected_label": "sexual-content",
+        "description": "Anders Loost post with FineArtNude hashtag"
+    },
+    {
+        "url": "https://bsky.app/profile/ayla-jay.bsky.social/post/3lnrn6jzfx22b",
+        "expected_label": "sexual-content",
+        "description": "Ayla-Jay.com Sunday morning post with nude hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/gb62da.bsky.social/post/3lnrlplgdqk22",
+        "expected_label": "sexual-content",
+        "description": "gb62da post with Happy Niky and nude/nsfw hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/inblck.com/post/3lntkmmnly22w",
+        "expected_label": "sexual-content",
+        "description": "Bach post with artnude and fineart hashtags"
+    },
+    {
+        "url": "https://bsky.app/profile/gdbphoto.bsky.social/post/3lny557ahvk25",
+        "expected_label": "sexual-content",
+        "description": "George Butch post with piano duet and nude hashtags"
+    },
+    {
         "url": "https://bsky.app/profile/bbhtaylor.bsky.social/post/3lnqagwqors2h",
         "expected_label": "sexual-content",
         "description": "Ben Taylor post with Wildflowers and nude hashtags"
@@ -50,53 +75,53 @@
         "description": "Blackfootphotos post with Steffi and nude hashtags"
     },
     {
-        "url": "https://bsky.app/profile/inblck.com/post/3lnutdz45yc2u",
-        "expected_label": "sexual-content",
-        "description": "Bach post with artdecomodel and artnude hashtags"
+        "url": "https://bsky.app/profile/anntelnaes.bsky.social/post/3lo2sirozks2d",
+        "expected_label": null,
+        "description": "Ann Telnaes regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/inblck.com/post/3lnsjzezg3k2b",
-        "expected_label": "sexual-content",
-        "description": "Bach post with artnude and nudeart hashtags"
+        "url": "https://bsky.app/profile/elizabethjacobs.bsky.social/post/3lo2upefes22r",
+        "expected_label": null,
+        "description": "Elizabeth Jacobs regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/greyson-carlyle.bsky.social/post/3lnqcglqimk2u",
-        "expected_label": "sexual-content",
-        "description": "Greyson Carlyle underwater post with nude hashtags"
+        "url": "https://bsky.app/profile/number10cat.bsky.social/post/3lo2w4q44kc2f",
+        "expected_label": null,
+        "description": "Number 10 Cat regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/andersloost.bsky.social/post/3lnsa52qvvc2f",
-        "expected_label": "sexual-content",
-        "description": "Anders Loost post with Audra and FineArtNude hashtag"
+        "url": "https://bsky.app/profile/jimmusilpainter.bsky.social/post/3lnzuuwqtt22q",
+        "expected_label": null,
+        "description": "Jim Musil Painter regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/mglichtmaler.bsky.social/post/3lnxx4xvn7226",
-        "expected_label": "sexual-content",
-        "description": "MG-Lichtmaler post with model and nude hashtag"
+        "url": "https://bsky.app/profile/dailybunnies.bsky.social/post/3lo2qirg7xs2b",
+        "expected_label": null,
+        "description": "Daily Bunnies regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/blackfootphotos.bsky.social/post/3lnwhekltcs2g",
-        "expected_label": "sexual-content",
-        "description": "Blackfootphotos post with Giulia and nude hashtags"
+        "url": "https://bsky.app/profile/katewagner.bsky.social/post/3lo2zofyks22u",
+        "expected_label": null,
+        "description": "Kate Wagner regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/inblck.com/post/3lnvcdv5d222o",
-        "expected_label": "sexual-content",
-        "description": "Bach post with artdecomodel and artnude hashtags"
+        "url": "https://bsky.app/profile/bencollins.bsky.social/post/3lo2ilthnz22z",
+        "expected_label": null,
+        "description": "Ben Collins regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/thattnnudist.bsky.social/post/3lnvazizzms2f",
-        "expected_label": "sexual-content",
-        "description": "That TN Nudist post with monochrome Monday and nudist hashtags"
+        "url": "https://bsky.app/profile/mikez.bsky.social/post/3lo2yqc4f4k2k",
+        "expected_label": null,
+        "description": "Mike Z regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/louisiananudistcpl.bsky.social/post/3lnt6l2lvxk2g",
-        "expected_label": "sexual-content",
-        "description": "lahncpl post with comfort zone and nudist hashtags"
+        "url": "https://bsky.app/profile/weratedogs.com/post/3lnyhtihpg22g",
+        "expected_label": null,
+        "description": "We Rate Dogs regular post without sexual content"
     },
     {
-        "url": "https://bsky.app/profile/evolvingbeauty.bsky.social/post/3lnvhoyvtmc2v",
-        "expected_label": "sexual-content",
-        "description": "Eric Boutilier-Brown daily post with nsfw and nude hashtags"
+        "url": "https://bsky.app/profile/krassenstein.bsky.social/post/3lo2wva5vls2i",
+        "expected_label": null,
+        "description": "Krassenstein regular post without sexual content"
     }
 ]
